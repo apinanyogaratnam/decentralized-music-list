@@ -10,8 +10,8 @@ let musicList;
 
 beforeEach(async () => {
     accounts = await web3.eth.getAccounts();
-
-    musicList = await web3.eth.Contract(JSON.parse(abi))
+    console.log()
+    musicList = await new web3.eth.Contract(abi)
       .deploy({
           data: evm.bytecode.object,
           arguments: []
