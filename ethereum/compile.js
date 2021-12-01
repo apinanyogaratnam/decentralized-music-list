@@ -8,7 +8,7 @@ const source = fs.readFileSync(musicListPath, 'utf8');
 const input = {
   language: 'Solidity',
   sources: {
-    'Inbox.sol': {
+    'MusicList.sol': {
       content: source,
     },
   },
