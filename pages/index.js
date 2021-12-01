@@ -108,7 +108,7 @@ export default function Home() {
           })
         }
       </div>
-      <p>Install metamask if you have not done so already. Get eth from the faucet here: <a href="https://faucets.chain.link/rinkeby" target="_blank" rel="noopener">faucet</a></p>
+      <p>Install metamask if you have not done so already. Get eth from the faucet here: <a href="https://faucets.chain.link/rinkeby" target="_blank" rel="noopener noreferrer">faucet</a></p>
       <p>Make sure you are on the rinkeby testnet. Any funds sent through different networks will be lost.</p>
     </div>
   )
