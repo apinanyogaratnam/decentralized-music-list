@@ -8,7 +8,7 @@ const { abi, evm } = require('../ethereum/build/MusicList.json');
 let accounts;
 let musicList;
 
-beforeEach(() => {
+beforeEach(async () => {
     accounts = await web3.eth.getAccounts();
 
     musicList = await web3.eth.Contract(JSON.parse(abi))
