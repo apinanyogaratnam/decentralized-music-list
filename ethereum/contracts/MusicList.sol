@@ -7,6 +7,7 @@ contract MusicList {
         string url;
     }
     mapping(address => Song[]) songs;
+    mapping(address => uint) songsCount;
 
     constructor() {}
 
@@ -18,5 +19,28 @@ contract MusicList {
         });
 
         songs[msg.sender].push(song);
+        songsCount[msg.sender] += 1;
+    }
+
+    function removeSong(uint index) public {
+        require(index < songsCount[msg.sender]);
+
+        Song[] storage songsArray = songs[msg.sender];
+        songsArray[index] = songsArray[songsArray.length - 1];
+        songsArray.pop();
+        songsCount[msg.sender] -= ;
+    }
+
+    function getSong(uint index) public view returns (string, string, string, url) {
+        Song memory song = songs[msg.sender][index];
+        return {
+            song.name,
+            song.artistName,
+            song.url
+        }
+    }
+
+    function getSongCount() public view returns(uint) {
+        return songsCount[msg.sender];
     }
 }
