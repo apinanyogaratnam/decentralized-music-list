@@ -33,11 +33,11 @@ contract MusicList {
 
     function getSong(uint index) public view returns (string, string, string, url) {
         Song memory song = songs[msg.sender][index];
-        return {
+        return (
             song.name,
             song.artistName,
             song.url
-        }
+        );
     }
 
     function getSongCount() public view returns(uint) {
