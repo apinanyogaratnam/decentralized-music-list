@@ -41,7 +41,7 @@ contract MusicList {
         );
     }
 
-    function getSongCount() external view returns(uint) {
+    function getSongCount() external view returns (uint) {
         return songsCount[msg.sender];
     }
 }
