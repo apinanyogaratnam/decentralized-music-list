@@ -28,7 +28,7 @@ contract MusicList {
         Song[] storage songsArray = songs[msg.sender];
         songsArray[index] = songsArray[songsArray.length - 1];
         songsArray.pop();
-        songsCount[msg.sender] -= ;
+        songsCount[msg.sender] -= 1;
     }
 
     function getSong(uint index) public view returns (string, string, string, url) {
