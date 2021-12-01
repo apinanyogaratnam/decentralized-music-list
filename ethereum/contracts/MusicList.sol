@@ -11,7 +11,7 @@ contract MusicList {
 
     constructor() {}
 
-    function addSong(string memory name, string memory artistName, string memory url) public {
+    function addSong(string memory name, string memory artistName, string memory url) external {
         Song memory song = Song({
             name: name,
             artistName: artistName,
@@ -22,7 +22,7 @@ contract MusicList {
         songsCount[msg.sender] += 1;
     }
 
-    function removeSong(uint index) public {
+    function removeSong(uint index) external {
         require(index < songsCount[msg.sender]);
 
         Song[] storage songsArray = songs[msg.sender];
@@ -31,7 +31,7 @@ contract MusicList {
         songsCount[msg.sender] -= 1;
     }
 
-    function getSong(uint index) public view returns (string memory, string memory, string memory) {
+    function getSong(uint index) external view returns (string memory, string memory, string memory) {
         Song memory song = songs[msg.sender][index];
         return (
             song.name,
@@ -40,7 +40,7 @@ contract MusicList {
         );
     }
 
-    function getSongCount() public view returns(uint) {
+    function getSongCount() external view returns(uint) {
         return songsCount[msg.sender];
     }
 }
