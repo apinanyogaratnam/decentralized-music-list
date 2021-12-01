@@ -32,6 +32,3 @@ fs.outputJsonSync(
     path.resolve(buildPath, 'MusicList.json'),
     output.contracts['MusicList.sol'].MusicList
 );
-// module.exports = JSON.parse(solc.compile(JSON.stringify(input))).contracts[
-//   'MusicList.sol'
-// ].MusicList;
