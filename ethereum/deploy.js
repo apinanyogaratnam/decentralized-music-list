@@ -1,10 +1,10 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 
-const { abi, evm } = require('./compile');
+const { abi, evm } = require('./build/MusicList.json');
 
 const provider = new HDWalletProvider(
-  'SEED_PHRASE_HERE',
+  '',
   'https://rinkeby.infura.io/v3/d55c4f57b80445d284aa7754f355aaeb'
 );
 
