@@ -33,6 +33,12 @@ export default function Home() {
     console.log(txData);
   };
 
+  const removeSong = async (id) => {
+    const accounts = await web3.eth.getAccounts();
+    const txData = await musicList.methods.removeSong(id).send({ from: accounts[0] });
+    console.log(txData);
+  }
+
   return (
     <div>
       <h1>{songCount}</h1>
@@ -64,12 +70,13 @@ export default function Home() {
       <div>
         <h1>Your Songs:</h1>
         {
-          songList.map(song => {
+          songList.map((song, index) => {
             return (
               <div>
                 <h2>{song.songName}</h2>
                 <h3>{song.artistName}</h3>
                 <h3>{song.url}</h3>
+                <button onClick={removeSong(index)}>Delete</button>
               </div>
             );
           })
